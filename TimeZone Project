@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+           background-image: url(https://t4.ftcdn.net/jpg/03/18/06/89/360_F_318068938_Qi8DD8wX2kg8nbeEbaPKAF8zdkoqq0D6.jpg);
+          background-size:cover ;
+         } 
+        .timebox{
+            border:5px solid #f00;
+            border-radius: 10%;
+            height: 150px;
+            width: 150px;
+            display: inline-block;
+            margin: 4px;
+            background-color: rgb(73, 180, 31);
+            color: antiquewhite;
+            
+        }
+        .timebox h1, .timebox p {text-align: center;}
+
+        h1{
+            text-align: center;
+            color: blue;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Display time with different time zone</h1>
+    <div class="timebox">
+        <h1>India</h1>
+        <p id="indiaTime"></p>
+    </div>
+    <div class="timebox">
+        <h1>London</h1>
+        <p id="londonTime"></p>
+    </div>
+    <div class="timebox">
+        <h1>New York</h1>
+        <p id="newyorkTime"></p>
+    </div>
+    <div class="timebox">
+        <h1>Sydney</h1>
+        <p id="sydneyTime"></p>
+    </div>
+
+   
+
+
+<script>
+     var getIndiaTime = function(){
+        document.getElementById("indiaTime").innerHTML =  new Date().toLocaleString("en-us",{timeZone:'asia/kolkata',timeStyle:'medium',hourCycle:'h24'})
+       
+     }
+      getIndiaTime();
+      setInterval(getIndiaTime,1000) ;
+
+      var getLondonTime = function(){
+        document.getElementById("londonTime").innerHTML =  new Date().toLocaleString("en-us",{timeZone:'Europe/London',timeStyle:'medium',hourCycle:'h24'})
+       
+     }
+      getLondonTime();
+      setInterval(getLondonTime,1000) ;
+
+      var getNewyorkTime = function(){
+        document.getElementById("newyorkTime").innerHTML =  new Date().toLocaleString("en-us",{timeZone:'America/New_york',timeStyle:'medium',hourCycle:'h24'})
+       
+     }
+      getLondonTime();
+      setInterval(getNewyorkTime,1000) ;
+
+      var getSydneyTime = function(){
+        document.getElementById("sydneyTime").innerHTML =  new Date().toLocaleString("en-us",{timeZone:'Australia/Sydney',timeStyle:'medium',hourCycle:'h24'})
+       
+     }
+      getSydneyTime();
+      setInterval(getSydneyTime,1000) ;
+
+    </script>
+    
+</body>
+</html>
